@@ -22,8 +22,16 @@ export default class CarService {
 
   public async findAllCars() {
     const carODM = new CarODM();
-    const cars = await carODM.findAll();
+    const cars = await carODM.findAllCars();
     const carsFixed = cars.map((car) => this.createCarDomain(car));
     return carsFixed;
+  }
+
+  public async findById(id: string) {
+    const carODM = new CarODM();
+    // console.log(carODM);
+    
+    const car = await carODM.findById(id);
+    return this.createCarDomain(car);
   }
 }
