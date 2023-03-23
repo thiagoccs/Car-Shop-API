@@ -16,9 +16,14 @@ export default class CarService {
     const carODM = new CarODM();
     // Inserir os dados no banco
     const newCar = await carODM.create(car);
-    // console.log(newCar);
-    
     // Retornar os dados com o id
     return this.createCarDomain(newCar);
+  }
+
+  public async findAllCars() {
+    const carODM = new CarODM();
+    const cars = await carODM.findAll();
+    const carsFixed = cars.map((car) => this.createCarDomain(car));
+    return carsFixed;
   }
 }
