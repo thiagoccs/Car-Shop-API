@@ -16,11 +16,11 @@ export default class CarController {
   }
 
   public async create() {
-    const car: ICar = (await this._req).body;
+    const car: ICar = this._req.body;
 
     try {
       const newCar = await this._service.registerCar(car);
-      console.log(newCar);
+      // console.log(newCar);
       
       return this._res.status(201).json(newCar);
     } catch (error) {
