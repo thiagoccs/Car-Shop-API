@@ -45,6 +45,15 @@ describe('Deveria criar uma moto', function () {
     expect(result).to.be.deep.equal(null);
   });
 
+  it('Deveria retornar uma moto atualizado pelo id', async function () {
+    sinon.stub(Model, 'findByIdAndUpdate').resolves(motoByIdMock);
+
+    const service = new MotorcycleService();
+    const result = await service.updateById('Cruzeiro Cabuloso', motoByIdMock);
+    
+    expect(result).to.be.deep.equal(motoByIdMock);
+  });
+
   afterEach(function () {
     sinon.restore();
   });
