@@ -1,7 +1,6 @@
-import ECategory from '../Utils/enums';
 import IVehicle from './IVehicle';
 
 export default interface IMotorcycle extends IVehicle {
-  category: ECategory;
+  category: string;
   engineCapacity: number;
 }
