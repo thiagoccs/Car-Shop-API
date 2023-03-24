@@ -38,7 +38,7 @@ describe('Deveria criar um carro', function () {
     expect(result).to.be.deep.equal(carrosMock);
   });
 
-  it('Deveria retornar um carro pelo ID', async function () {
+  it('Deveria retornar um carro pelo Id', async function () {
     sinon.stub(Model, 'findById').resolves(carroByIdMock);
 
     const service = new CarService();
@@ -47,13 +47,22 @@ describe('Deveria criar um carro', function () {
     expect(result).to.be.deep.equal(carroByIdMock);
   });
 
-  it('Deveria retornar um Id inválido', async function () {
+  it('Deveria retornar null em caso de um Id inválido', async function () {
     sinon.stub(Model, 'findById').resolves();
 
     const service = new CarService();
     const result = await service.findById('Frangas');    
     
     expect(result).to.be.deep.equal(null);
+  });
+
+  it('Deveria retornar um carro atualizado pelo id', async function () {
+    sinon.stub(Model, 'findByIdAndUpdate').resolves(carroByIdMock);
+
+    const service = new CarService();
+    const result = await service.updateById('Cruzeiro Cabuloso', carroByIdMock);
+    
+    expect(result).to.be.deep.equal(carroByIdMock);
   });
 
   afterEach(function () {
