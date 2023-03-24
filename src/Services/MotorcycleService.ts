@@ -21,4 +21,19 @@ export default class MotorcycleService {
     // Retornar os dados com o id
     return this.createMotorcycleDomain(newMotorcycle);
   }
+
+  public async findAllMotorcycle() {
+    const motorcycleODM = new MotorcycleODM();
+    const motorcycles = await motorcycleODM.findAllMotorCycle();
+    const motorcyclesFixed = motorcycles
+      .map((motorcycle) => this.createMotorcycleDomain(motorcycle));
+    return motorcyclesFixed;
+  }
+
+  public async findByIdM(id: string) {
+    const motorcycleODM = new MotorcycleODM();
+    
+    const motorcycle = await motorcycleODM.findByIdM(id);
+    return this.createMotorcycleDomain(motorcycle);
+  }
 }
