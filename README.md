@@ -14,6 +14,8 @@ A aplicação utiliza a Programação Orientada a Documentos, que é um paradigm
 <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" style="margin-bottom: 4px;" height="30px">
 <img src="https://img.shields.io/badge/MongoDB-4faa41?style=for-the-badge&logo=mongodb&logoColor=white" style="margin-bottom: 4px;" height="30px">
 <img src="https://img.shields.io/badge/mongoose-810000?style=for-the-badge&logo=mongoose&logoColor=white" style="margin-bottom: 4px;" height="30px">
+<img src="https://img.shields.io/badge/Mocha-8D6748?style=for-the-badge&logo=Mocha&logoColor=white" style="margin-bottom: 4px;" height="30px">
+<img src="https://img.shields.io/badge/chai-A30701?style=for-the-badge&logo=chai&logoColor=white" style="margin-bottom: 4px;" height="30px">
 </p>
 
 <h2>🏁 Para rodar o projeto 🏁</h2>
